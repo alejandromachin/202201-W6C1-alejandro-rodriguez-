@@ -1,7 +1,7 @@
 const ToDo = ({ task: { name, id, done } }) => {
   return (
     <>
-      <p>{name}</p>
+      <a href={name}>{name}</a>
     </>
   );
 };
