@@ -5,6 +5,7 @@ const fakedata = [
   { id: 4, name: "fake taks", done: false },
   { id: 5, name: "yes it is fake", done: false },
   { id: 6, name: "buy more food", done: false },
+  { id: 7, name: "testing", done: false },
 ];
 
 export default fakedata;
