@@ -1,5 +1,5 @@
 import fakedata from "../../fakedata/fakedata";
-import ToDo from "../ToDo/ToDo";
+import ToDo from "../toDo/ToDo";
 
 const ToDoList = () => {
   return (
