@@ -52,7 +52,8 @@
       "!src/reportWebVitals.js",
       "!src/setupTests.js",
       "!src/index.js",
-      "!src/fakedata/fakedata.js"
+      "!src/fakedata/fakedata.js",
+      "!src/mocks/*"
     ]
   }
 }
