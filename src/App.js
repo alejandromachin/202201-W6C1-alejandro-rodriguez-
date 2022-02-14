@@ -14,7 +14,6 @@ function App() {
     dispatch(loadTasksAction(fakedata));
   }, [dispatch]);
 
-  console.log(tasksList);
   return (
     <>
       <ToDoForm />
