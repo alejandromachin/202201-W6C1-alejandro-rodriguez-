@@ -13,4 +13,10 @@ export const handlers = [
       );
     }
   ),
+  rest.post(
+    "https://alejandro-rodriguez-w6c1.herokuapp.com/todos",
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json([{ id: 1, name: "test1" }]));
+    }
+  ),
 ];
