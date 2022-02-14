@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTaskAction } from "../../redux/actions/actionsCreator";
+
+import { addTaskThunk } from "../../redux/thunks/tasksThunks";
 
 const ToDoForm = () => {
   const blankFields = { name: "" };
@@ -12,14 +13,13 @@ const ToDoForm = () => {
   };
   const createTask = (event) => {
     event.preventDefault();
-    dispatch(addTaskAction(formData));
+    dispatch(addTaskThunk(formData));
     resetForm();
   };
   const changeData = (event) => {
     setFormData({
       ...formData,
       [event.target.id]: event.target.value,
-      id: event.target.value,
       done: false,
     });
   };
