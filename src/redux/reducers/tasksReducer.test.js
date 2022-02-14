@@ -17,4 +17,28 @@ describe("Given a tasksReducer function", () => {
       expect(newState).toEqual(tasks);
     });
   });
+  describe("When it is called with a an array of one task and an unknown action", () => {
+    test("Then it should return the currentstate", () => {
+      const tasks = [{ name: "test" }];
+      const currentState = [];
+
+      const action = {
+        type: actionsTypes.loadTasksTest,
+        tasks: tasks,
+      };
+
+      const newState = tasksReducer(currentState, action);
+
+      expect(newState).toEqual(currentState);
+    });
+  });
+  describe("When it is called without state and action", () => {
+    test("Then it should return the currentstate", () => {
+      const currentState = [];
+
+      const newState = tasksReducer();
+
+      expect(newState).toEqual(currentState);
+    });
+  });
 });
