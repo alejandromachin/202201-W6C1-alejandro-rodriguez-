@@ -3,15 +3,15 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import ToDoForm from "./components/ToDoForm/ToDoForm";
 import ToDoList from "./components/ToDoList/ToDoList";
-import fakedata from "./fakedata/fakedata";
-import { loadTasksAction } from "./redux/actions/actionsCreator";
+
+import { loadTasksThunk } from "./redux/thunks/tasksThunks";
 
 function App() {
   const tasksList = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadTasksAction(fakedata));
+    dispatch(loadTasksThunk);
   }, [dispatch]);
 
   return (
