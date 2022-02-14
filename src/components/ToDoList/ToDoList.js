@@ -1,10 +1,9 @@
-import fakedata from "../../fakedata/fakedata";
-import ToDo from "../toDo/ToDo";
+import ToDo from "../ToDo/ToDo";
 
-const ToDoList = () => {
+const ToDoList = ({ tasks }) => {
   return (
     <ul>
-      {fakedata.map((task) => (
+      {tasks.map((task) => (
         <ToDo key={task.id} task={task} />
       ))}
     </ul>
