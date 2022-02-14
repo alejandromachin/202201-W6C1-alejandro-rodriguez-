@@ -1,6 +1,6 @@
 import actionsTypes from "./actionsTypes";
 
 export const loadTasksAction = (tasks) => ({
-  action: actionsTypes.loadTasks,
+  type: actionsTypes.loadTasks,
   tasks,
 });

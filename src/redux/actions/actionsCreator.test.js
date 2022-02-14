@@ -7,7 +7,7 @@ describe("Given a loadTasksAction function", () => {
       const task = { name: "test" };
 
       const expectedAction = {
-        action: actionsTypes.loadTasks,
+        type: actionsTypes.loadTasks,
         tasks: task,
       };
 
