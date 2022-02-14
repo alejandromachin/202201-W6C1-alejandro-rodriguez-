@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ToDo from "./toDo";
+import ToDo from "./ToDo";
 
 describe("Given a ToDo component", () => {
   describe("When it is rendered with the a task", () => {
