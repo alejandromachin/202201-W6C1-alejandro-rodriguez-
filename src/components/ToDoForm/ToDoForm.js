@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addProductAction } from "../../redux/actions/actionsCreator";
 
-const FormArticle = () => {
+const ToDoForm = () => {
   const blankFields = { name: "" };
   const [formData, setFormData] = useState(blankFields);
   const resetForm = () => {
@@ -24,10 +22,10 @@ const FormArticle = () => {
 
   return (
     <form onSubmit={createTask} noValidate autoComplete="off">
-      <label htmlFor="task">Task: </label>
+      <label htmlFor="name">Task: </label>
       <input
         type="text"
-        id="task"
+        id="name"
         value={formData.name}
         onChange={changeData}
         placeholder="To do"
@@ -37,4 +35,4 @@ const FormArticle = () => {
   );
 };
 
-export default FormArticle;
+export default ToDoForm;
