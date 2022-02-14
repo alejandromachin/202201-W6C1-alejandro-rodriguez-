@@ -1,7 +1,7 @@
 const ToDo = ({ task: { name, id, done } }) => {
   return (
     <>
-      <li>{name}</li>
+      <p>{name}</p>
     </>
   );
 };
