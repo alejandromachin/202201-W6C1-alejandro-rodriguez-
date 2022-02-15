@@ -72,4 +72,18 @@ describe("Given a tasksReducer function", () => {
       expect(newState.length).toBe(1);
     });
   });
+
+  describe("When it is call with the action toggleTaskAction and a task that its not done", () => {
+    test("Then it should return the same task but with the property done on true", () => {
+      const currentState = [{ id: 1, name: "test1", done: false }];
+      const idTaskToToggle = 1;
+      const action = {
+        type: actionsTypes.toggleTask,
+        id: idTaskToToggle,
+      };
+      const newState = tasksReducer(currentState, action);
+
+      expect(newState[0].done).toBe(true);
+    });
+  });
 });

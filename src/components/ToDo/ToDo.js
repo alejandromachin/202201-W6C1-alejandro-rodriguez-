@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { deleteTaskThunk } from "../../redux/thunks/tasksThunks";
+import {
+  deleteTaskThunk,
+  toggleTaskThunk,
+} from "../../redux/thunks/tasksThunks";
 
 const ToDo = ({ task }) => {
   const [isDone, setIsDone] = useState();
 
   const toggleDone = (event) => {
     event.preventDefault();
-
+    dispatch(toggleTaskThunk(task));
     setIsDone(!isDone);
   };
 
