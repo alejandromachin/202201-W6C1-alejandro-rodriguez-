@@ -11,6 +11,7 @@ describe("Given a ToDoForm component", () => {
 
       const input = screen.getByRole("textbox");
       const submitButton = screen.getByRole("button", { name: /add/i });
+      userEvents.type(input);
 
       expect(input).toBeInTheDocument();
       expect(submitButton).toBeInTheDocument();

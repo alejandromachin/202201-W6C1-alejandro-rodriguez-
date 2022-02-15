@@ -1,4 +1,9 @@
-import { addTaskThunk, deleteTaskThunk, loadTasksThunk } from "./tasksThunks";
+import {
+  addTaskThunk,
+  deleteTaskThunk,
+  loadTasksThunk,
+  toggleTaskThunk,
+} from "./tasksThunks";
 
 describe("Given a loadTasksThunk function", () => {
   describe("When it is called", () => {
@@ -50,6 +55,20 @@ describe("Given a deleteTaskThunk inner function", () => {
       await thunkFunction(dispatch);
 
       expect(dispatch).not.toHaveBeenCalled();
+    });
+  });
+});
+describe("Given a toggleTaskThunk inner function", () => {
+  describe("When it is called with a task that is not done", () => {
+    test("Then it should call the dispatch with the task", async () => {
+      const dispatch = jest.fn();
+      const task = { id: 1, name: "test1", done: false };
+
+      const thunkFunction = toggleTaskThunk(task);
+
+      await thunkFunction(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });
