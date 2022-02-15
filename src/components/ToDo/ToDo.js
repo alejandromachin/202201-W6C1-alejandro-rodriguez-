@@ -6,13 +6,11 @@ import {
 } from "../../redux/thunks/tasksThunks";
 
 const ToDo = ({ task }) => {
-  console.log(task);
   const dispatch = useDispatch();
 
   const toggleDone = (event) => {
     event.preventDefault();
     dispatch(toggleTaskThunk(task));
-    console.log(task);
   };
 
   const deleteTask = (event) => {
