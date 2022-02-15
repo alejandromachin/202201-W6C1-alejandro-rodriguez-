@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import ToDoForm from "./components/ToDoForm/ToDoForm";
 import ToDoList from "./components/ToDoList/ToDoList";
