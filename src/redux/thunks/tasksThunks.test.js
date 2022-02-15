@@ -1,4 +1,4 @@
-import { addTaskThunk, loadTasksThunk } from "./tasksThunks";
+import { addTaskThunk, deleteTaskThunk, loadTasksThunk } from "./tasksThunks";
 
 describe("Given a loadTasksThunk function", () => {
   describe("When it is called", () => {
@@ -23,6 +23,33 @@ describe("Given a addTaskThunk inner function", () => {
       await thunkFunction(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
+    });
+  });
+});
+describe("Given a deleteTaskThunk inner function", () => {
+  describe("When it is called with an id", () => {
+    test("Then it should return the new state without the task", async () => {
+      const dispatch = jest.fn();
+      const task = { id: 1, name: "test1" };
+
+      const thunkFunction = deleteTaskThunk(task.id);
+
+      await thunkFunction(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it is called with an id 10 that doesnt exist", () => {
+    test("Then it should return the new state without the task", async () => {
+      const dispatch = jest.fn();
+      const task = { id: 10, name: "test1" };
+
+      const thunkFunction = deleteTaskThunk(task.id);
+
+      await thunkFunction(dispatch);
+
+      expect(dispatch).not.toHaveBeenCalled();
     });
   });
 });

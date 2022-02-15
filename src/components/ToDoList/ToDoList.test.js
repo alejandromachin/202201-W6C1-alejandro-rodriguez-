@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import renderWithProviders from "../../setupTests";
 import ToDoList from "./ToDoList";
 
 describe("Given a ToDoList component", () => {
@@ -6,7 +7,7 @@ describe("Given a ToDoList component", () => {
     test("Then it should show a list with the two tasks", () => {
       const tasks = [{ name: "task1" }, { name: "task2" }];
 
-      render(<ToDoList tasks={tasks} />);
+      renderWithProviders(<ToDoList tasks={tasks} />);
 
       const listOfTasks = screen.getAllByRole("listitem").length;
 
