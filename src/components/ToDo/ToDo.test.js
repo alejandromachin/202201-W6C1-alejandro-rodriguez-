@@ -1,4 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import renderWithProviders from "../../setupTests";
 import ToDo from "./ToDo";
 
 describe("Given a ToDo component", () => {
@@ -6,7 +7,7 @@ describe("Given a ToDo component", () => {
     test("Then it should render a link with the name of the task", () => {
       const task = { name: "test" };
 
-      render(<ToDo task={task} />);
+      renderWithProviders(<ToDo task={task} />);
 
       const nameOftheTask = screen.getByRole("link", { name: task.name });
 
