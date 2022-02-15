@@ -28,7 +28,7 @@ export const addTaskThunk = (task) => async (dispatch) => {
 
 export const deleteTaskThunk = (id) => async (dispatch) => {
   const response = await fetch(
-    `"https://alejandro-rodriguez-w6c1.herokuapp.com/todos/"${id}`,
+    `https://alejandro-rodriguez-w6c1.herokuapp.com/todos/${id}`,
     {
       method: "DELETE",
     }
