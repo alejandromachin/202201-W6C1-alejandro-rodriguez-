@@ -6,7 +6,7 @@ import ToDoList from "./components/ToDoList/ToDoList";
 
 import { loadTasksThunk } from "./redux/thunks/tasksThunks";
 
-function App() {
+const App = () => {
   const tasksList = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
@@ -20,6 +20,6 @@ function App() {
       <ToDoList tasks={tasksList} />
     </>
   );
-}
+};
 
 export default App;
