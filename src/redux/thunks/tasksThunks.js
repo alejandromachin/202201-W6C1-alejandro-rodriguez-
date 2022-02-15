@@ -41,5 +41,5 @@ export const toggleTaskThunk = (task) => async (dispatch) => {
     body: JSON.stringify(task),
   });
   const newTask = await response.json();
-  dispatch(toggleTaskAction(newTask));
+  dispatch(toggleTaskAction(newTask.id));
 };

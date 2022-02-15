@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import {
@@ -7,15 +6,13 @@ import {
 } from "../../redux/thunks/tasksThunks";
 
 const ToDo = ({ task }) => {
-  const [isDone, setIsDone] = useState();
+  const dispatch = useDispatch();
 
   const toggleDone = (event) => {
     event.preventDefault();
     dispatch(toggleTaskThunk(task));
-    setIsDone(!isDone);
   };
 
-  const dispatch = useDispatch();
   const deleteTask = (event) => {
     event.preventDefault();
     dispatch(deleteTaskThunk(task.id));
@@ -23,7 +20,11 @@ const ToDo = ({ task }) => {
 
   return (
     <li>
-      <a className={isDone ? "done" : ""} href={task.name} onClick={toggleDone}>
+      <a
+        className={task.done ? "done" : ""}
+        href={task.name}
+        onClick={toggleDone}
+      >
         {task.name}
       </a>
       <a href="delete" onClick={deleteTask}>
